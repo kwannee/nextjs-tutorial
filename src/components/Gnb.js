@@ -10,8 +10,8 @@ export default function Gnb(){
         setActiveItem(data.name)
         if(data.name === "home") {
             router.push('/')
-        }else if( data.name === "about") {
-            router.push('/about')
+        }else{
+            router.push(`/${data.name}`)
         }
     } 
     return (
@@ -24,6 +24,11 @@ export default function Gnb(){
         <Menu.Item
           name='about'
           active={activeItem === 'about'}
+          onClick={goLink}
+        />
+        <Menu.Item
+          name='contact'
+          active={activeItem === 'contact'}
           onClick={goLink}
         />
 
